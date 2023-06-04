@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<style>
+	#map-preview {
+	  width: 100%;
+	  height: 500px; /* 미리보기 화면의 높이를 조정합니다. */
+	}
+  </style>
+<html>
+	<head>
+		
+        <title>로그인</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- 카카오로그인 -->
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">BIKE</a>
+					</header>
+                
+                <!--Login-->
+                <div class="kakaoBtn">
+                    <img src="images/kakao_login_large_wide.png" alt="카카오" onclick="kakaoLogin();">
+                </div>
+            
+                <script>
+                  function kakaoLogin() {
+                        $.ajax({
+                            url: 'getKakaoAuthUrl.do',
+                            type: 'get',
+                            async: false,
+                            dataType: 'text',
+                            success: function (url) {
+                                location.href = url;
+                            }
+                        });
+        
+                      }
+                </script>
+
+
+				<!-- Copyright
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
